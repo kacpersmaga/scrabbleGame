@@ -39,17 +39,14 @@ export default function Navbar() {
         {user ? (
            <div className="flex items-center gap-3 mt-4 md:mt-0">
              
-             {/* --- TU JEST ZMIANA (Zadanie 5: Warunkowe renderowanie zdjęcia) --- */}
              <div className="flex items-center gap-2">
                 {user.photoURL ? (
-                    // Jeśli użytkownik ma zdjęcie (np. z Google), wyświetl je
                     <img 
                         src={user.photoURL} 
                         alt="Profil" 
                         className="w-10 h-10 rounded-full border border-gray-300 object-cover shadow-sm"
                     />
                 ) : (
-                    // Jeśli nie ma zdjęcia, wyświetl pierwszą literę w kółku
                     <div className="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-700 font-bold border border-indigo-200">
                         {user.displayName ? user.displayName.charAt(0).toUpperCase() : user.email?.charAt(0).toUpperCase()}
                     </div>

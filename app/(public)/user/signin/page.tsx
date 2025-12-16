@@ -22,16 +22,14 @@ function SignInForm() {
     .then(() => {
         signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-            // ZADANIE 8: Warunek sprawdzający returnUrl
             if (returnUrl) {
                 router.push(returnUrl);
             } else {
-                router.push('/'); // lub '/dashboard'
+                router.push('/');
             }
         })
         .catch((error) => {
             const errorMessage = error.message;
-            // ZADANIE 8: Zamiast console.error, wyświetlamy Alert w UI
             setError("Błąd logowania: Sprawdź email i hasło.");
             console.error(errorMessage);
         });
@@ -48,7 +46,6 @@ function SignInForm() {
           <h2 className="text-gray-900 text-lg mb-1 font-medium title-font">Zaloguj się</h2>
           <p className="leading-relaxed mb-5 text-gray-600">Wprowadź swoje dane, aby kontynuować.</p>
           
-          {/* ZADANIE 8: Alert (komponent wizualny błędu) */}
           {error && (
             <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
               <span className="block sm:inline">{error}</span>
