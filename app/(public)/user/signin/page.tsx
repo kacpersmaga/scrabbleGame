@@ -1,16 +1,15 @@
 'use client';
 import { useState, Suspense } from 'react';
 import { signInWithEmailAndPassword, setPersistence, browserSessionPersistence } from "firebase/auth";
-import { auth } from '@/app/lib/firebase'; // Sprawdź ścieżkę do firebase.ts
+import { auth } from '@/app/lib/firebase';
 import { useSearchParams, useRouter } from "next/navigation";
 import Link from 'next/link';
 
 function SignInForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const [error, setError] = useState(''); // Stan do obsługi błędu (Alert)
+  const [error, setError] = useState(''); 
   
-  // ZADANIE 8: Pobranie returnUrl
   const returnUrl = searchParams.get("returnUrl");
   
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
