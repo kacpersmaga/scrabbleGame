@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Scrabble Online - Projekt Laboratoryjny
 
-## Getting Started
+Aplikacja internetowa do gry w Scrabble, zrealizowana w ramach laboratoriów z Frontend Developmentu (Lab 6-11). Projekt wykorzystuje najnowsze technologie webowe do zapewnienia płynnej rozgrywki, autoryzacji użytkowników oraz zapisywania postępów w chmurze.
 
-First, run the development server:
+## 🚀 Wersja Live
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Aplikacja jest wdrożona i dostępna pod adresem:
+### [🔗 https://scrabble-game-nine.vercel.app/](https://scrabble-game-nine.vercel.app/)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠 Technologie
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Projekt został zbudowany w oparciu o nowoczesny stos technologiczny:
 
-## Learn More
+* **Framework:** [Next.js 15](https://nextjs.org/) (App Router)
+* **Język:** [TypeScript](https://www.typescriptlang.org/)
+* **Baza danych i Autoryzacja:** [Firebase](https://firebase.google.com/) (Authentication & Firestore)
+* **Style:** [Tailwind CSS](https://tailwindcss.com/)
+* **UI Library:** [Tailblocks](https://tailblocks.cc/) (Sekcja Hero, Footer, Formularze - zgodnie z wymogiem Lab 7)
+* **Testy E2E:** [Playwright](https://playwright.dev/)
+* **Hosting:** [Vercel](https://vercel.com/)
 
-To learn more about Next.js, take a look at the following resources:
+## ✨ Funkcjonalności
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1.  **Rozgrywka Scrabble:**
+    * Interaktywna plansza 15x15.
+    * Losowanie liter, układanie słów, walidacja ruchów.
+    * Przeliczanie punktów (premie słowne i literowe).
+    * Zapisywanie stanu gry do chmury.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2.  **Konto Użytkownika (Firebase Auth):**
+    * Rejestracja z weryfikacją email.
+    * Logowanie (Email/Hasło).
+    * Resetowanie hasła.
+    * Ochrona tras (przekierowanie niezalogowanych użytkowników w `app/(protected)/layout.tsx`).
 
-## Deploy on Vercel
+3.  **Panel Użytkownika (Firestore):**
+    * **Profil:** Edycja nicku, zdjęcia profilowego oraz danych adresowych (Ulica, Miasto, Kod pocztowy).
+    * **Historia Gier:** Przeglądanie zapisanych rozgrywek przypisanych do konkretnego użytkownika.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📦 Instalacja i Uruchomienie lokalne
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Aby uruchomić projekt na własnym komputerze:
+
+1.  **Sklonuj repozytorium:**
+    ```bash
+    git clone [https://github.com/TWOJ_LOGIN/lab6-scrabble.git](https://github.com/TWOJ_LOGIN/lab6-scrabble.git)
+    cd lab6-scrabble
+    ```
+
+2.  **Zainstaluj zależności:**
+    ```bash
+    npm install
+    ```
+
+3.  **Skonfiguruj zmienne środowiskowe:**
+    Utwórz plik `.env.local` w głównym katalogu i dodaj klucze ze swojego projektu Firebase.
+
+4.  **Uruchom serwer deweloperski:**
+    ```bash
+    npm run dev
+    ```
+
+## 📝 Informacje o autorze
+
+* **Student:** Kacper Smaga
+* **Numer albumu:** 14997
+* **Wybrana biblioteka UI (Lab 7):** Tailblocks (nr 7)
